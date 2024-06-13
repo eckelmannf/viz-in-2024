@@ -1,0 +1,5 @@
+<div class="total-container" *ngLet="totalOptions() as totalOptions">
+    <div echarts [options]="totalOptions.total" class="chart"></div>
+    <div echarts [options]="totalOptions.male" class="chart"></div>
+    <div echarts [options]="totalOptions.female" class="chart"></div>
+</div>

@@ -1,0 +1,11 @@
+.total-container {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.chart {
+    height: 350px;
+    margin-top: -30px;
+    margin-bottom: -140px;
+}

@@ -1,0 +1,33 @@
+<div class="page-container">
+   
+    <div class="headline-container">
+        <h1 class="mat-headline-medium title">Radar</h1>
+        <div class="flex-spacer"></div>
+        <div class="actions">
+            <mat-select #selectRadar placeholder="Stratifizieren" [value]="null">
+                <mat-option [value]="null">Keine</mat-option>
+                <mat-option [value]="'Gender'">Geschlecht</mat-option>
+                <mat-option [value]="'Altersgruppe'">Altersgruppe</mat-option>
+                <mat-option [value]="'Bildungsgruppe'">Bildungsgruppe</mat-option>
+                <mat-option [value]="'Bundesland'">Bundesland</mat-option>
+            </mat-select>
+        </div>
+    </div>
+    <app-variables-radar [data]="data() ?? []" [stratifyBy]="selectRadar.value"></app-variables-radar>
+
+    <div class="headline-container">
+        <h1 class="mat-headline-medium title">Parallel</h1>
+        <div class="flex-spacer"></div>
+        <div class="actions">
+            <mat-select #select placeholder="Stratifizieren" [value]="null">
+                <mat-option [value]="null">Keine</mat-option>
+                <mat-option [value]="'Gender'">Geschlecht</mat-option>
+                <mat-option [value]="'Altersgruppe'">Altersgruppe</mat-option>
+                <mat-option [value]="'Bildungsgruppe'">Bildungsgruppe</mat-option>
+                <mat-option [value]="'Bundesland'">Bundesland</mat-option>
+            </mat-select>
+        </div>
+    </div>
+    <app-variables-parallel [data]="data() ?? []" [stratifyBy]="select.value"></app-variables-parallel>
+
+</div>

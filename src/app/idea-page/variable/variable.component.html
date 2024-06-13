@@ -1,0 +1,59 @@
+<div class="variable-component responsive" *ngLet="{data: data(), variable: variable()} as context">
+    <div class="title mat-headline-medium">
+        <h2>{{context.variable.name}}</h2>
+        <div class="underline"></div>
+    </div>
+
+    <!-- <app-geda-table [data]="bildungData() ?? []"></app-geda-table> -->
+
+    <div class="description textbox">
+        <mat-icon class="watermark">question_mark</mat-icon>
+        <div class="title mat-title-large">Fragestellung</div>
+        <p [innerHTML]="context.variable.description | br"></p>
+        <div class="highlight"></div>
+    </div>
+    
+    <div class="gauges textbox">
+        <div class="title mat-title-large">Geschlechtsverteilung für&nbsp;
+            <span class="selected-bundesland"
+                title="Maus in Karte nutzen um für Bundesland anzuzeigen">{{selectedBundesland()
+                ??'Deutschland'}}</span>
+        </div>
+        <app-gender-gauges [data]="context.data ?? []"
+            [bundeslandFilter]="selectedBundesland() ?? null"></app-gender-gauges>
+        <div class="highlight"></div>
+    </div>
+
+
+    <div class="map textbox">
+        <div class="title mat-title-large">Örtliche Verteilung</div>
+        <app-map [data]="context.data ?? []" (bundeslandSelected)="selectedBundesland.set($event)"></app-map>
+        <div class="highlight"></div>
+    </div>
+
+    <div class="outcome textbox">
+        <mat-icon class="watermark">summarize</mat-icon>
+        <div class="title mat-title-large">Ergebniss</div>
+        <p [innerHTML]="context.variable.outcome | br"></p>
+        <div class="highlight"></div>
+    </div>
+
+    <div class="education textbox">
+        <div class="title mat-title-large">
+            Bildungsverteilung
+            <div class="flex-spacer"></div>
+            <mat-slide-toggle [checked]="educationChartType() === 'radar'" class="chart-option"
+                (change)="educationChartType.set($event.checked ? 'radar' : 'gauge')">
+                Radar
+            </mat-slide-toggle>
+        </div>
+        <app-education-viz #eduViz [data]="context.data ?? []" [show]="educationChartType()"></app-education-viz>
+        <div class="highlight"></div>
+    </div>
+
+    <div class="age-gender textbox">
+        <div class="title mat-title-large">Altersverteilung</div>
+        <app-age-gender-bar [data]="context.data ?? []"></app-age-gender-bar>
+        <div class="highlight"></div>
+    </div>
+</div>

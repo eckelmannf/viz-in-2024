@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+
+:host {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.spacer {
+    margin: 0 auto;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+    border-right: var(--rki-nebel-color) solid 1px;
+    border-radius: 0;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.main-toolbar {
+    --mat-toolbar-container-background-color: var(--rki-marine-color);
+    @include mat.elevation(8);
+
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    .brand {
+        color: #fefefe;
+    }
+
+    button {
+        color: var(--rki-nebel-color);
+        &:hover {
+            color: var(--rki-royalblue-color);
+        }
+    }
+}
+
+.active {
+    font-weight: bold;
+    overflow: visible;
+
+    .active-mark {
+        position: absolute;
+        bottom: 5px;
+        left: 8px;
+        right: 48px;
+        height: 4px;
+        background-color: var(--rki-marine-color);
+    }
+}
+
+.sidenav-content.sideNavOpen {
+    // max-width: calc(100% - 200px);
+}

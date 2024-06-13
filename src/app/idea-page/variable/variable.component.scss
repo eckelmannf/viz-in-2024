@@ -1,0 +1,101 @@
+.variable-component {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 1080px;
+
+    .title {
+        flex: 2 1 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    } 
+    
+    .description {
+        flex: 2 1 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    .gauges {
+        flex: 2 1 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+   
+    .map {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 500px;
+        box-sizing: border-box;
+    }
+
+    .outcome {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .total {
+        flex: 1 1 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .education {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .age-gender {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+}
+
+.underline {
+    height: 2px;
+    margin-top: -10px;
+    background-color: var(--rki-marine-color);
+}
+
+.selected-bundesland {
+    font-weight: bold;
+}
+
+.textbox {
+    background-color: var(--rki-nebel-color);
+    position: relative;
+
+    padding: 16px;
+
+    .title {
+        display: flex;
+        flex-direction: row;
+
+        padding-bottom: 16px;
+    }
+
+    & > * {
+        z-index: 10;
+    }
+
+    .watermark {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+
+        z-index: 0;
+        color: rgba(3, 40, 76, 0.3);
+        font-size: 80px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .highlight {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 52px;
+        width: 4px;
+        background-color: var(--rki-marine-color);
+    }
+}

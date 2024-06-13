@@ -1,0 +1,31 @@
+.widget-container {
+    display: grid;
+    grid-template-areas:
+        'age map'
+        'education map';
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+
+    // overflow: hidden;
+
+    .age-card {
+        grid-area: age;
+    }
+
+    .map-card {
+        grid-area: map;
+    }
+
+    .education-card {
+        grid-area: education;
+    }
+}
+
+.measure-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+}
+
+

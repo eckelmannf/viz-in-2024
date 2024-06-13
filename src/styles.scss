@@ -1,0 +1,36 @@
+:root {
+    --rki-royalblue-color: #005db9;
+    --rki-marine-color: #03284c;
+    --rki-nebel-color: #ecf0f7;
+    --rki-taube-color: #92a5c6;
+}
+
+a {
+    color: #005db9;
+
+    color: #b6d9fc;
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+.page-container {
+    padding: 24px 36px;
+}
+
+.flex-spacer {
+    margin: auto;
+}
+
+// .wrap-tooltip-content {
+//     background-color: orange !important;
+// }
+
+div {
+    box-sizing: border-box;
+}

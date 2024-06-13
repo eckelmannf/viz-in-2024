@@ -1,0 +1,18 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    // min-width: 1080px;
+    // max-width: 1080px;
+
+    > * {
+        flex: 1;
+    }
+}
+
+section {
+    padding-bottom: 64px;
+}
+
+.variable-info {
+    padding-bottom: 48px;
+}

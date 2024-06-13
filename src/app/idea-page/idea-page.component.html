@@ -1,0 +1,12 @@
+<div class="page-container">
+    @for(section of sections(); track section.name) {
+    <section>
+        <h1>{{section.name}}</h1>
+        @for(part of section.parts; track part.id) {
+        <div class="variable-info">
+            <app-variable [variable]="part"></app-variable>
+        </div>
+        }
+    </section>
+    }
+</div>

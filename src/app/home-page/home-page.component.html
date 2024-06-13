@@ -1,0 +1,75 @@
+<div class="page-container">
+    <mat-button-toggle-group name="gender" [value]="selectedGender()" (valueChange)="setSelectedGender($event)">
+        <mat-button-toggle value="Männer">Männer</mat-button-toggle>
+        <mat-button-toggle value="Frauen">Frauen</mat-button-toggle>
+        <mat-button-toggle value="Gesamt">Gesamt</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-slide-toggle [checked]="standardizeAge()" (change)="setStandardizeAge($event.checked)">Alter
+        standartisieren</mat-slide-toggle>
+
+    @if(variables(); as variables) {
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" [selectedIndex]="selecetedTabIndex()"
+        (selectedTabChange)="setSelectedVariable(variables[$event.index])">
+        @for (variable of variables; track variable) {
+        <mat-tab [label]="variable"></mat-tab>
+        }
+    </mat-tab-group>
+    }
+
+    <!-- <div class="test">TEST: {{test()?.Percent}}</div> -->
+
+    <!-- @for(row of test(); track row){
+    <div class="test">TEST: {{row | json}}</div>
+    } -->
+
+    <div class="measure-container">
+        <div class="total-measure">
+            {{totalMeasureStr()}}
+        </div>
+        @if(ageMeasure(); as ageMeasure){
+        <div class="age-measure">
+            {{ageMeasure.category}} ({{ageMeasure.value}}%)<br>
+            Altersgruppe mit der höchsten Prävalenz
+        </div>
+        }
+        @if(locationMeasure(); as locationMeasure){
+        <div class="location-measure">
+            {{locationMeasure.category}} ({{locationMeasure.value}}%)<br>
+            Bundesland mit der höchsten Prävalenz
+        </div>
+        }
+    </div>
+    <div class="widget-container">
+        <mat-card class="age-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Nach Alter
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <app-age-widget></app-age-widget>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="map-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Landkarte
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <app-location-widget></app-location-widget>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="education-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Nach Bildung
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <app-edjucation-widget></app-edjucation-widget>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

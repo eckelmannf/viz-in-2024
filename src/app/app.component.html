@@ -1,0 +1,33 @@
+<mat-toolbar class="main-toolbar">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
+  <span class="brand">GEDA Dashboard</span>
+  <span class="spacer"></span>
+
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [mode]="'side'" fixedInViewport [fixedTopGap]="64">
+    <!-- <mat-toolbar>Menu</mat-toolbar> -->
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" routerLinkActive="active">Nachbau<div class="active-mark"></div></a>
+      <a mat-list-item routerLink="/idea" routerLinkActive="active">Idee<div class="active-mark"></div></a>
+      <a mat-list-item routerLink="/overview" routerLinkActive="active">Übersicht<div class="active-mark"></div></a>
+      <!-- <a mat-list-item routerLink="/imprint">Impressum</a>
+      <a mat-list-item routerLink="/privacy">Datenschutz</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="sidenav-content" [class.sideNavOpen]="drawer.opened">
+      <router-outlet />
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

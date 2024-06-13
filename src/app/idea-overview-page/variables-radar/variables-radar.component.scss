@@ -1,0 +1,25 @@
+.chart {
+    height: 800px;
+}
+
+::ng-deep .wrap-tooltip-content {
+    // background-color: orange !important;
+    > div {
+        > div:nth-child(2) {
+            display: grid;
+            // grid-template-columns: 1fr 1fr;
+            // gap: 2px;
+            // grid-auto-flow: column;
+            // grid-auto-rows: 24;
+
+            grid-template-rows: repeat(23, auto);
+            gap: 3px;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr 1fr;
+
+            > div {
+                margin: 0 !important;
+            }
+        }
+    }
+}

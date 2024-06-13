@@ -1,0 +1,23 @@
+.chart-container {
+}
+
+.chart {
+    min-height: 350px;
+    margin-bottom: -80px;
+}
+
+.radar-chart {
+    height: 400px;
+}
+
+.gauge-chart-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gauge-chart{
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: -60px;
+}

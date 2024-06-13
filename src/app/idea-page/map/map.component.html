@@ -1,0 +1,5 @@
+<div class="chart-container">
+    <!-- <mat-slide-toggle [checked]="standardize()" (change)="standardize.set($event.checked)">Standardisieren</mat-slide-toggle> -->
+    <div echarts [options]="options()" class="chart" (chartMouseOver)="emitBundeslandSelected($event.name)"
+        (chartMouseOut)="emitBundeslandSelected(null)"></div>
+</div>

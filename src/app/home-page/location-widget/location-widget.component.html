@@ -1,0 +1,3 @@
+<button mat-raised-button (click)="showBar.set(!showBar())">Show {{showBar() ? 'MAP' : 'BAR'}}</button>
+
+<div echarts [options]="options()" class="chart"></div>

@@ -1,0 +1,13 @@
+<div class="education-viz-component" *ngLet="chartContext() as context">
+    @if(context.type === 'gauges'){
+    <div class="chart-container gauge-chart-container">
+        <div echarts [options]="context.options.Untere" class="chart gauge-chart"></div>
+        <div echarts [options]="context.options.Mittlere" class="chart gauge-chart"></div>
+        <div echarts [options]="context.options.Obere" class="chart gauge-chart"></div>
+    </div>
+    }@else {
+    <div class="radar-container chart-container">
+        <div echarts [options]="context.options" class="chart radar-chart"></div>
+    </div>
+    }
+</div>
